@@ -1,0 +1,40 @@
+schema_version = "1.4"
+
+[task]
+name = "tb-science/mathematical-sciences/psychology/social-trust-game-analysis"
+version = "1.0.0"
+description = "Analyze behavioral data from an economic trust game and estimate social preference parameters using maximum likelihood"
+authors = [{name = "Aaron Schneider", email = "aaron@schneider.dev"}]
+keywords = ["social-psychology", "trust-game", "behavioral-economics", "social-preferences", "maximum-likelihood", "experimental-psychology", "game-theory"]
+
+[metadata]
+difficulty_explanation = "Requires understanding of social preference models (inequity aversion, utility theory), experimental economics methodology, and maximum likelihood estimation for models with latent parameters."
+domain = "mathematical-sciences"
+field = "psychology"
+subfield = "social-psychology"
+category = "scientific-computing"
+author_organization = "comdevopsai"
+author_profile = "SDET red-team for Harbor benchmark authoring"
+expert_time_estimate_hours = 8
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+user = "agent"
+
+[agent]
+timeout_sec = 3600.0
+user = "agent"
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 16384
+gpus = 0
+allow_internet = false
+
+[solution]
+env = {}
+
+[verifier.env]
+PYTHONPATH = "/workspace"

@@ -1,0 +1,40 @@
+schema_version = "1.4"
+
+[task]
+name = "tb-science/mathematical-sciences/psychology/cognitive-drift-diffusion-model-fitting"
+version = "1.0.0"
+description = "Fit a drift-diffusion model to 2AFC reaction time data and recover known parameters via Bayesian MCMC"
+authors = [{name = "Aaron Schneider", email = "aaron@schneider.dev"}]
+keywords = ["cognitive-science", "drift-diffusion", "decision-making", "psychophysics", "bayesian-inference", "reaction-time", "MCMC", "parameter-recovery"]
+
+[metadata]
+difficulty_explanation = "Requires implementing a drift-diffusion model likelihood function from scratch (or using a library), running MCMC sampling with convergence diagnostics, and recovering parameters from noisy behavioral data. A generalist with Python skills can fit a simple model, but recovering all four parameters with valid diagnostics requires deep understanding of Bayesian inference, MCMC convergence assessment, and the DDM likelihood function's peculiarities (bounded RTs, boundary crossing probabilities). The task is made harder by the need to handle the non-decision time constraint (t < rt_min) and the boundary condition that z must be between 0 and a."
+domain = "mathematical-sciences"
+field = "psychology"
+subfield = "cognitive-science"
+category = "scientific-computing"
+author_organization = "comdevopsai"
+author_profile = "SDET red-team for Harbor benchmark authoring"
+expert_time_estimate_hours = 6
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+user = "agent"
+
+[agent]
+timeout_sec = 3600.0
+user = "agent"
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 16384
+gpus = 0
+allow_internet = false
+
+[solution]
+env = {}
+
+[verifier.env]
+PYTHONPATH = "/workspace"
